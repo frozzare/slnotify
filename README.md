@@ -10,13 +10,13 @@ go get github.com/frozzare/slnotify
 
 ## Usage
 
-Edit config file with api keys and settings.
+Edit config file with api keys and settings. The site id flag is required to find deviations for a station.
 
 ```
 slnotify --config=/path/to/config.json --site-id=1002
 ```
 
-The site id flag is required to find deviations for a station.
+To run it more than once use cron or something like that.
 
 ## License
 
