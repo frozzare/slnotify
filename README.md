@@ -2,6 +2,12 @@
 
 Send notifycations for a station to your phone using [Pushover](https://pushover.net/) and [sl.se](http://sl.se)'s api.
 
+## Installation
+
+```
+go get github.com/frozzare/posync
+```
+
 ## Usage
 
 Edit config file with api keys and settings.
