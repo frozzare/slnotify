@@ -1,6 +1,6 @@
 # slnotify
 
-Send notifications for a station to your phone using [Pushover](https://pushover.net/) and [sl.se](http://sl.se)'s api.
+Send notifications for a station to your phone using [Pushover](https://pushover.net/) and [sl.se](http://sl.se)'s [api](https://www.trafiklab.se/api/sl-realtidsinformation-3).
 
 ## Installation
 
