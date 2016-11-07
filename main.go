@@ -14,7 +14,7 @@ import (
 
 var (
 	configFlag = flag.String("config", "config.json", "Path to config file")
-	siteIDFlag = flag.Int("site-id", 0, "SL Site ID")
+	siteIDFlag = flag.Int("site-id", 0, "sl.se site id")
 )
 
 func main() {
