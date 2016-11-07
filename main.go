@@ -3,6 +3,7 @@ package main
 import (
 	"flag"
 	"fmt"
+	"log"
 
 	"strings"
 
@@ -56,5 +57,11 @@ func main() {
 		text = text[0 : len(text)-2]
 	}
 
-	notify.Push(fmt.Sprintf("%s station", d[0].StopInfo.StopAreaName), text)
+	err := notify.Push(fmt.Sprintf("%s station", d[0].StopInfo.StopAreaName), text)
+
+	if err != nil {
+		log.Panic(err)
+	}
+
+	fmt.Print("Notify sent!")
 }

@@ -1,7 +1,6 @@
 package notify
 
 import (
-	"fmt"
 	"time"
 
 	"github.com/frozzare/sl/config"
@@ -9,7 +8,7 @@ import (
 )
 
 // Push will push a title with message to Pushover.
-func Push(title string, message string) {
+func Push(title string, message string) error {
 	c := config.Get()
 
 	p := pushover.Pushover{
@@ -26,14 +25,9 @@ func Push(title string, message string) {
 		Expire:    90,
 	}
 
-	response, err := p.Notify(n)
-
-	if err != nil {
-		if err != pushover.PushoverError {
-			panic(err)
-		} else {
-			fmt.Println(err)
-			fmt.Println(response)
-		}
+	if _, err := p.Notify(n); err != nil {
+		return err
 	}
+
+	return nil
 }
