@@ -12,8 +12,9 @@ var c *Config
 // Config represents a config struct.
 type Config struct {
 	SL struct {
-		APIKey     string `json:"api_key"`
-		TimeWindow int    `json:"time_window"`
+		APIKey        string   `json:"api_key"`
+		TimeWindow    int      `json:"time_window"`
+		TransportMode []string `json:"transport_mode"`
 	}
 	Pushover struct {
 		AppKey  string `json:"app_key"`
@@ -47,6 +48,10 @@ func Init(s string) {
 func Get() *Config {
 	if c == nil {
 		Init("")
+	}
+
+	if len(c.SL.TransportMode) == 0 {
+		c.SL.TransportMode = []string{"train"}
 	}
 
 	return c

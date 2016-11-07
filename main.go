@@ -7,6 +7,7 @@ import (
 	"strings"
 
 	"github.com/frozzare/go-util/pathutil"
+	"github.com/frozzare/go-util/sliceutil"
 	"github.com/frozzare/sl/config"
 	"github.com/frozzare/sl/notify"
 	"github.com/frozzare/sl/sl"
@@ -22,6 +23,7 @@ func main() {
 
 	// Init config.
 	config.Init(pathutil.RealPath(*configFlag))
+	c := config.Get()
 
 	if *siteIDFlag == 0 {
 		fmt.Println("Site id is empty")
@@ -49,7 +51,7 @@ func main() {
 			continue
 		}
 
-		if strings.ToLower(d.StopInfo.TransportMode) != "train" {
+		if sliceutil.Has(c.SL.TransportMode, strings.ToLower(d.StopInfo.TransportMode)) {
 			continue
 		}
 

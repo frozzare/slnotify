@@ -1,7 +1,8 @@
 {
     "sl": {
         "api_key": "",
-        "time_window": 60
+        "time_window": 60,
+        "transport_mode": ["train"]
     },
     "pushover": {
         "app_key": "",

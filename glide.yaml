@@ -4,4 +4,5 @@ import:
   subpackages:
   - httputil
   - pathutil
+  - sliceutil
 - package: github.com/jdiez17/go-pushover
