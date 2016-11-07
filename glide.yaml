@@ -1,0 +1,7 @@
+package: github.com/frozzare/sl
+import:
+- package: github.com/frozzare/go-util
+  subpackages:
+  - httputil
+  - pathutil
+- package: github.com/jdiez17/go-pushover

@@ -1,0 +1,10 @@
+{
+    "sl": {
+        "api_key": "",
+        "time_window": 60
+    },
+    "pushover": {
+        "app_key": "",
+        "user_key": ""
+    }
+}

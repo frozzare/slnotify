@@ -1,0 +1,13 @@
+hash: bb0ed76bec475927591cf1ef73fd9700513744386c0d636da82558bf6965d36d
+updated: 2016-11-07T19:55:55.701102668+01:00
+imports:
+- name: github.com/frozzare/go-util
+  version: f987f07c615eefb1256ca6264a943a19d61b5e7a
+  subpackages:
+  - httputil
+  - pathutil
+- name: github.com/jdiez17/go-pushover
+  version: c6d58816fcbf0d1d7ccc9a99bdb98bb225f0f202
+- name: github.com/kardianos/osext
+  version: c2c54e542fb797ad986b31721e1baedf214ca413
+testImports: []
