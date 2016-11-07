@@ -29,25 +29,31 @@ func main() {
 	}
 
 	// Get deviations from sl.se for a site id.
-	d := sl.GetDeviations(*siteIDFlag)
+	deviations, err := sl.GetDeviations(*siteIDFlag)
 
-	if len(d) == 0 {
+	if len(deviations) == 0 {
 		fmt.Println("No result from sl.se")
 		return
 	}
 
+	if err != nil {
+		fmt.Println(fmt.Sprintf("Error: %s", err))
+		return
+	}
+
 	text := ""
+	name := deviations[0].StopInfo.StopAreaName
 
-	for _, x := range d {
-		if x.Deviation.Text == "" {
+	for _, d := range deviations {
+		if d.Deviation.Text == "" {
 			continue
 		}
 
-		if strings.ToLower(x.StopInfo.TransportMode) != "train" {
+		if strings.ToLower(d.StopInfo.TransportMode) != "train" {
 			continue
 		}
 
-		text += x.Deviation.Text + "\n\n"
+		text += d.Deviation.Text + "\n\n"
 	}
 
 	if text == "" {
@@ -56,10 +62,11 @@ func main() {
 		text = text[0 : len(text)-2]
 	}
 
-	err := notify.Push(fmt.Sprintf("%s station", d[0].StopInfo.StopAreaName), text)
+	err = notify.Push(fmt.Sprintf("%s station", name), text)
 
 	if err != nil {
-		panic(err)
+		fmt.Println(fmt.Sprintf("Error: %s", err))
+		return
 	}
 
 	fmt.Println("Sent notification to Pushover!")

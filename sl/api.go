@@ -40,10 +40,12 @@ func getEndpoint(path string, siteID int) string {
 }
 
 // GetDeviations returns a list of deviations.
-func GetDeviations(siteID int) []StopPointDeviations {
+func GetDeviations(siteID int) ([]StopPointDeviations, error) {
 	res := new(Response)
 
-	httputil.GetJSON(getEndpoint("realtimedepartures", siteID), &res)
+	if err := httputil.GetJSON(getEndpoint("realtimedepartures", siteID), &res); err != nil {
+		return []StopPointDeviations{}, err
+	}
 
-	return res.ResponseData.StopPointDeviations
+	return res.ResponseData.StopPointDeviations, nil
 }
