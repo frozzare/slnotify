@@ -2,7 +2,7 @@
     "sl": {
         "api_key": "",
         "time_window": 60,
-        "transport_mode": ["train"]
+        "transport_mode": ["train", "metro"]
     },
     "pushover": {
         "app_key": "",
