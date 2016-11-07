@@ -5,7 +5,7 @@ Send notifycations for a station to your phone using [Pushover](https://pushover
 ## Installation
 
 ```
-go get github.com/frozzare/posync
+go get github.com/frozzare/slnotify
 ```
 
 ## Usage
