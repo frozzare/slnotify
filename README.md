@@ -16,7 +16,7 @@ Edit config file with api keys and settings.
 slnotify --config=/path/to/config.json --site-id=1002
 ```
 
-The site id flag is required to find information deviations for a station.
+The site id flag is required to find deviations for a station.
 
 ## License
 
