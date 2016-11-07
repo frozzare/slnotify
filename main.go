@@ -3,7 +3,6 @@ package main
 import (
 	"flag"
 	"fmt"
-	"log"
 
 	"strings"
 
@@ -60,8 +59,8 @@ func main() {
 	err := notify.Push(fmt.Sprintf("%s station", d[0].StopInfo.StopAreaName), text)
 
 	if err != nil {
-		log.Panic(err)
+		panic(err)
 	}
 
-	fmt.Print("Notify sent!")
+	fmt.Println("Sent notification to Pushover!")
 }
