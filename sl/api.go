@@ -7,7 +7,7 @@ import (
 	"github.com/frozzare/sl/config"
 )
 
-const SL_ENDPOINT = "http://api.sl.se/api2/"
+const ENDPOINT = "http://api.sl.se/api2/"
 
 type Response struct {
 	ResponseData ResponseData
@@ -36,7 +36,7 @@ type StopInfo struct {
 func getEndpoint(path string, siteID int) string {
 	c := config.Get()
 
-	return fmt.Sprintf("%s%s.json?siteid=%d&timewindow=%d&key=%s", SL_ENDPOINT, path, siteID, c.SL.TimeWindow, c.SL.APIKey)
+	return fmt.Sprintf("%s%s.json?siteid=%d&timewindow=%d&key=%s", ENDPOINT, path, siteID, c.SL.TimeWindow, c.SL.APIKey)
 }
 
 // GetDeviations returns a list of deviations.
