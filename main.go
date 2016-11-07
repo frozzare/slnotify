@@ -52,7 +52,6 @@ func main() {
 		}
 
 		if !sliceutil.Has(c.SL.TransportMode, strings.ToLower(d.StopInfo.TransportMode)) {
-			fmt.Println(d.StopInfo.TransportMode)
 			continue
 		}
 
