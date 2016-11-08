@@ -26,7 +26,7 @@ func main() {
 	c := config.Get()
 
 	if *siteIDFlag == 0 {
-		fmt.Println("Site id is empty")
+		fmt.Println("Error: --site-id is empty")
 		return
 	}
 
@@ -34,7 +34,7 @@ func main() {
 	deviations, err := sl.GetDeviations(*siteIDFlag)
 
 	if len(deviations) == 0 {
-		fmt.Println("No result from sl.se")
+		fmt.Println("Error: Empty result from sl.se")
 		return
 	}
 
