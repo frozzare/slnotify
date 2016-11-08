@@ -3,7 +3,7 @@ package notify
 import (
 	"time"
 
-	"github.com/frozzare/sl/config"
+	"github.com/frozzare/slnotify/config"
 	"github.com/jdiez17/go-pushover"
 )
 

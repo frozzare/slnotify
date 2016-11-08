@@ -8,9 +8,9 @@ import (
 
 	"github.com/frozzare/go-util/pathutil"
 	"github.com/frozzare/go-util/sliceutil"
-	"github.com/frozzare/sl/config"
-	"github.com/frozzare/sl/notify"
-	"github.com/frozzare/sl/sl"
+	"github.com/frozzare/slnotify/config"
+	"github.com/frozzare/slnotify/notify"
+	"github.com/frozzare/slnotify/sl"
 )
 
 var (

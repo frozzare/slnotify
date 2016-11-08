@@ -4,7 +4,7 @@ import (
 	"fmt"
 
 	"github.com/frozzare/go-util/httputil"
-	"github.com/frozzare/sl/config"
+	"github.com/frozzare/slnotify/config"
 )
 
 const ENDPOINT = "http://api.sl.se/api2/"
