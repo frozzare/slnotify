@@ -33,8 +33,6 @@ func main() {
 	// Get deviations from sl.se for a site id.
 	deviations, err := sl.GetDeviations(*siteIDFlag)
 
-	deviations = nil
-
 	// Send out a notification when empty result from api.sl.se.
 	if len(deviations) == 0 || err != nil {
 		if err := notify.Push("SL Notify", c.Text.NoResult); err != nil {
