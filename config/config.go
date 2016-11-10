@@ -20,6 +20,10 @@ type Config struct {
 		AppKey  string `json:"app_key"`
 		UserKey string `json:"user_key"`
 	}
+	Text struct {
+		NoResult     string `json:"no_result"`
+		NoDeviations string `json:"no_deviations"`
+	}
 }
 
 // Init will initialize the config file.
