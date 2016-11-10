@@ -7,5 +7,9 @@
     "pushover": {
         "app_key": "",
         "user_key": ""
+    },
+    "text": {
+        "no_result": "",
+        "no_deviations": ""
     }
 }
