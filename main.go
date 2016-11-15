@@ -33,9 +33,19 @@ func main() {
 	// Get deviations from sl.se for a site id.
 	deviations, err := sl.GetDeviations(*siteIDFlag)
 
-	// Send out a notification when empty result from api.sl.se.
-	if len(deviations) == 0 || err != nil {
+	// Send out a notification when getting a error from api.sl.se.
+	if err != nil {
 		if err := notify.Push("SL Notify", c.Text.NoResult); err != nil {
+			fmt.Println(fmt.Sprintf("Error: %s", err))
+		} else {
+			fmt.Println("Sent notification to Pushover!")
+		}
+		return
+	}
+
+	// Send out a notification when empty result from api.sl.se.
+	if len(deviations) == 0 {
+		if err := notify.Push("SL Notify", c.Text.NoDeviations); err != nil {
 			fmt.Println(fmt.Sprintf("Error: %s", err))
 		} else {
 			fmt.Println("Sent notification to Pushover!")
