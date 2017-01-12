@@ -43,7 +43,7 @@ func getEndpoint(path string, siteID int) string {
 func GetDeviations(siteID int) ([]StopPointDeviations, error) {
 	res := new(Response)
 
-	if err := httputil.GetJSON(getEndpoint("realtimedepartures", siteID), &res); err != nil {
+	if err := httputil.GetJSON(getEndpoint("realtimedeparturesV4", siteID), &res); err != nil {
 		return []StopPointDeviations{}, err
 	}
 
